@@ -3,11 +3,13 @@ import fetch from "node-fetch";
 import cors from "cors";
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "ronak-jain-afk.github.io/nexus"
+}));
 app.use(express.json());
 
 // Direct Judge0 endpoint (public, no RapidAPI)
-const JUDGE0_URL = "https://ce.judge0.com/submissions?base64_encoded=false&wait=true";
+const JUDGE0_URL = "https://api.judge0.com/submissions?base64_encoded=false&wait=true";
 
 app.post("/run", async (req, res) => {
   try {
@@ -27,10 +29,9 @@ app.post("/run", async (req, res) => {
     res.status(500).json({ error: "Server error" });
   }
 });
-app.use(cors({
-  origin: "ronak-jain-afk.github.io/nexus"
-}));
+
 
 
 app.listen(3000, () => console.log("🚀 Backend running on http://localhost:3000"));
+
 
