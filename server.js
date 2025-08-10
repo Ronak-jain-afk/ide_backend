@@ -4,7 +4,7 @@ import cors from "cors";
 
 const app = express();
 app.use(cors({
-  origin: "ronak-jain-afk.github.io/nexus"
+  origin: "https://ronak-jain-afk.github.io"
 }));
 app.use(express.json());
 
@@ -33,5 +33,6 @@ app.post("/run", async (req, res) => {
 
 
 app.listen(3000, () => console.log("🚀 Backend running on http://localhost:3000"));
+
 
 
