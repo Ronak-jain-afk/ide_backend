@@ -27,5 +27,10 @@ app.post("/run", async (req, res) => {
     res.status(500).json({ error: "Server error" });
   }
 });
+app.use(cors({
+  origin: "ronak-jain-afk.github.io/nexus"
+}));
+
 
 app.listen(3000, () => console.log("🚀 Backend running on http://localhost:3000"));
+
